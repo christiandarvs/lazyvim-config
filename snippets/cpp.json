@@ -1,0 +1,7 @@
+{
+  "Insert std::endl" : {
+    "prefix": "el",
+    "body" : ["<< std::endl;"],
+    "description": "Appends std::endl;"
+  }
+}
