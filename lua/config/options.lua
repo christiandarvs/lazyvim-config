@@ -7,3 +7,4 @@ vim.o.softtabstop = 4
 vim.o.expandtab = true
 vim.o.wrap = true
 vim.o.linebreak = true
+vim.o.showtabline = 2

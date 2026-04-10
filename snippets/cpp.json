@@ -1,7 +1,17 @@
 {
-  "Insert std::endl" : {
+  "Insert newline": {
     "prefix": "el",
-    "body" : ["<< std::endl;"],
-    "description": "Appends std::endl;"
-  }
+    "body": ["<< '\\n';"],
+    "description": "Appends newline without flushing"
+  },
+  "Insert main": {
+  "prefix": "im",
+  "body": [
+    "int main() {",
+    "    $0",
+    "    return 0;",
+    "}"
+  ],
+  "description": "Insert main block"
+}
 }
