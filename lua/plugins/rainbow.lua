@@ -1,15 +1,5 @@
 return {
-  -- 1. Tell Catppuccin to enable the rainbow_delimiters integration
-  {
-    "catppuccin/nvim",
-    opts = {
-      integrations = {
-        rainbow_delimiters = true,
-      },
-    },
-  },
-
-  -- 2. Install and configure the rainbow-delimiters plugin
+  -- Install and configure the rainbow-delimiters plugin
   {
     "HiPhish/rainbow-delimiters.nvim",
     dependencies = "nvim-treesitter/nvim-treesitter",
@@ -27,7 +17,7 @@ return {
           [""] = "rainbow-delimiters",
           lua = "rainbow-blocks",
         },
-        -- These highlight groups are automatically provided by Catppuccin
+        -- These highlight groups are automatically colored by Oxocarbon
         highlight = {
           "RainbowDelimiterRed",
           "RainbowDelimiterYellow",
