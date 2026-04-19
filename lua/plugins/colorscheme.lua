@@ -1,7 +1,9 @@
 return {
   {
-    "nyoom-engineering/oxocarbon.nvim",
+    "mcchrish/zenbones.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
     priority = 1000,
+    lazy = false,
   },
 
   {
@@ -18,22 +20,15 @@ return {
           vim.o.background = "dark"
         end
 
-        -- Load the colorscheme
-        vim.cmd.colorscheme("oxocarbon")
-
-        -- Patch the "black box" bug for Light Mode
-        if vim.o.background == "light" then
-          -- Make visual selections a subtle dark gray
-          vim.api.nvim_set_hl(0, "Visual", { bg = "#d0d0d0", fg = "NONE" })
-
-          -- Make LSP highlighted words (like functions) a soft gray instead of pitch black
-          vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#e0e0e0", fg = "NONE" })
-          vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#e0e0e0", fg = "NONE" })
-          vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#e0e0e0", fg = "NONE" })
-
-          -- Fix CursorLine visibility (optional but recommended)
-          vim.api.nvim_set_hl(0, "CursorLine", { bg = "#f4f4f4" })
-        end
+        -- [Optional] Zenwritten/Zenbones specific configurations
+        -- These must be set BEFORE calling vim.cmd.colorscheme
+        -- If you switch to "zenbones", change the prefix to vim.g.zenbones
+        vim.g.zenwritten_italic_comments = true
+        vim.g.zenwritten_transparent_background = false
+        vim.g.zenwritten_darken_comments = 38 -- Light mode comment darkness
+        vim.g.zenwritten_lighten_comments = 38 -- Dark mode comment lightness
+        vim.g.zenwritten_darken_noncurrent_window = false
+        vim.cmd.colorscheme("zenwritten")
       end,
     },
   },
